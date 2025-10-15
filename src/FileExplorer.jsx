@@ -12,7 +12,7 @@ function FileExplorer({ fileSystem }) {
         } else {
             return (
                 <>
-                    {<File data={x} />}
+                    {<File file={x} />}
                 </>
             )
         }
@@ -20,7 +20,11 @@ function FileExplorer({ fileSystem }) {
 
     return (
         <>
-            {display(fileSystem)}
+            {fileSystem.children.map((item) => (
+                <div key={item.id}>
+                    {display(item)}
+                </div>
+            ))}
         </>
     )
 }

@@ -2,11 +2,9 @@ function Folder({ data }) {
     function display(x) {
         return (
             <>
-                <p>{x.name}, {x.type}</p>
-                {x.children.map(
-                    (y) =>
-                        display(y)
-                )}
+                <div className="folder">
+                    <h3>Skibidi Folder</h3>
+                </div>
             </>
         )}
 

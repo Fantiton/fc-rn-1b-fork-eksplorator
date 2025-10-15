@@ -4,8 +4,7 @@ function File({ file }) {
     return (
         <>
             <div className="file">
-                <h3>{file.name}</h3>
-                <p>{file.type}</p>
+                <h3>Skibidi Plik</h3>
             </div>
         </>
     )

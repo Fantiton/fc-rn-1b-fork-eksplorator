@@ -1,20 +1,18 @@
+import File from './File.jsx'
+import Folder from './Folder.jsx'
+
 function FileExplorer({ fileSystem }) {
     function display(x) {
         if (x.type === "folder") {
             return (
                 <>
-                    <p>{x.name}, {x.type}</p>
-                    {x.children.map(
-                        (y) =>
-                            display(y)
-
-                    )}
+                    {<Folder data={x} />}
                 </>
             )
         } else {
             return (
                 <>
-                    <p>{x.name}, {x.type}</p>
+                    {<File data={x} />}
                 </>
             )
         }
@@ -22,12 +20,7 @@ function FileExplorer({ fileSystem }) {
 
     return (
         <>
-            <p>{fileSystem.name}, {fileSystem.type}</p>
-            {fileSystem.children.map(
-                (x) =>
-                    display(x)
-
-            )}
+            {display(fileSystem)}
         </>
     )
 }

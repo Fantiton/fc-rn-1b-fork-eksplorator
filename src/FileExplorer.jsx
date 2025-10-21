@@ -2,17 +2,17 @@ import File from './File.jsx'
 import Folder from './Folder.jsx'
 
 function FileExplorer({ fileSystem }) {
-    function display(x) {
-        if (x.type === "folder") {
+    function display(item) {
+        if (item.type === "folder") {
             return (
                 <>
-                    {<Folder data={x} />}
+                    {<Folder data={item} />}
                 </>
             )
         } else {
             return (
                 <>
-                    {<File file={x} />}
+                    {<File file={item} />}
                 </>
             )
         }
